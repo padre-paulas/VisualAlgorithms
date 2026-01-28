@@ -6,7 +6,7 @@ const Quicksort = (props) => {
       <h1 className="flex items-center text-center justify-center text-4xl mt-4">Quicksort</h1>
       
     </div>
-    <div className="bg-orange-400 w-60 text-white grid justify-center text-center">
+    <div className="bg-amber-glow w-60 text-white grid justify-center text-center">
       <h2 className="mt-4">Info</h2>
       <div>
         <p>Number of elements: {numberOfElements}</p>
@@ -16,9 +16,6 @@ const Quicksort = (props) => {
         <p>Time per operation, ms: {timePerOperation}</p>
         <input className="h-1 w-35
         bg-transparent
-      [&::-webkit-slider-runnable-track]:bg-white
-      [&::-webkit-slider-runnable-track]:h-1
-        [&::-webkit-slider-runnable-track]:rounded-full
         " min="0" max="1000" value={value} type="range"
         style={{ accentColor: 'white',  }}
         ></input>

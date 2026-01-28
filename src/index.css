@@ -1,4 +1,13 @@
 @import "tailwindcss";
+/* @import './colors.css'; */
+
+@theme {
+  --color-amber-glow: #FFA62B;
+  --muted-teal: #87B6A7;
+  --charcoal-brown: #353531;
+  --old-rose: #BD8B9C;
+  --vibrant-coral: #F25757;
+}
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
