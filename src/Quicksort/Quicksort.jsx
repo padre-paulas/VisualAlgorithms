@@ -1,9 +1,12 @@
 import { useState } from "react";
 import QuicksortBars from "./QuicksortBars";
 import Slider from "./Slider";
+import quicksortFunc from "./quicksort-func";
 const Quicksort = () => {
-  const [ numberOfElements, setNumberOfElements ] = useState();
-  const [ timePerOperation, setTimePerOperation ] = useState();
+  const [ numberOfElements, setNumberOfElements ] = useState(50);
+  const [ timePerOperation, setTimePerOperation ] = useState(50);
+  // const [ array, ]
+  // const [ isActive, setIsActive ] = useState(false);
   // const [ value, setValue ] = useState('');
 
   return <div className="flex justify-center h-screen w-screen bg-amber-glow/20">
@@ -16,7 +19,8 @@ const Quicksort = () => {
       <QuicksortBars />
     </div>
 
-    <button className="bg-muted-teal rounded-xl w-30 h-12 
+    <button onClick={() => quicksortFunc(numberOfElements, timePerOperation)}
+    className="bg-muted-teal rounded-xl w-30 h-12 
     shadow-[0_0_3px_var(--color-teal-700)] border-2 border-teal-700
     text-xl transition-all ease-in-out 
     hover:bg-muted-teal/90 hover:border-muted-teal
