@@ -3,8 +3,7 @@ const quicksortFunc = (numberOfElements, timePerOperation) => {
   () => Math.floor(Math.random() * 100));
   console.log(timePerOperation);
   displayArray(array, numberOfElements);
-  console.log(quicksortFuncInner(array));
-  return quicksortFuncInner(array, numberOfElements);
+  return quicksortFuncInner(array);
 }
 // const quicksortFuncInner = (array) => {
 //   if (array.length < 2) return array;
@@ -43,7 +42,7 @@ const partition = (array, left, right) => {
 
 export default quicksortFunc;
 
-// console.log(quicksortFunc(100, 1));
+// console.log(quicksortFunc(100));
 
 const displayArray = (array, numberOfElements) => {
   const width = String('w-' + Math.floor(120 / numberOfElements));

@@ -1,22 +1,22 @@
 import { useState } from "react";
 import QuicksortBars from "./QuicksortBars";
-import Slider from "./Slider";
+import SliderNumber from "./SliderNumber";
+import SliderTime from "./SliderTime";
 import quicksortFunc from "./quicksort-func";
+import generateArray from "./generate-array";
 const Quicksort = () => {
   const [ numberOfElements, setNumberOfElements ] = useState(50);
   const [ timePerOperation, setTimePerOperation ] = useState(50);
-  // const [ array, ]
-  // const [ isActive, setIsActive ] = useState(false);
-  // const [ value, setValue ] = useState('');
+  const [ array, setArray ] = useState(generateArray(numberOfElements));
 
   return <div className="flex justify-center h-screen w-screen bg-amber-glow/20">
     <div className="ml-0 w-screen text-midnight-violet
     flex flex-col items-center gap-4 
     ">
     <h1 className="flex items-center text-center justify-center text-4xl mt-4">Quicksort</h1>
-    <div className="bg-amber-glow/20 w-[70vw] h-[70vh] rounded-xl 
-    inset-shadow-[0_0_8px_var(--color-midnight-violet)]">
-      <QuicksortBars />
+    <div className={`bg-amber-glow/20 w-[70vw] h-[70vh] rounded-xl 
+    ${/* inset-shadow-[0_0_8px_var(--color-midnight-violet)] */' '}`}>
+      <QuicksortBars array={array} />
     </div>
 
     <button onClick={() => quicksortFunc(numberOfElements, timePerOperation)}
@@ -35,11 +35,11 @@ const Quicksort = () => {
       <h2 className="mt-4">Info</h2>
       <div>
         <p>Number of elements: {numberOfElements}</p>
-        <Slider value={numberOfElements} onChange={setNumberOfElements} />
+        <SliderNumber value={numberOfElements} onChange={setNumberOfElements} setArray={setArray} />
       </div>
       <div className="mb-40">
         <p>Time per operation, ms: {timePerOperation}</p>
-        <Slider value={timePerOperation} onChange={setTimePerOperation} />
+        <SliderTime value={timePerOperation} onChange={setTimePerOperation} />
       </div>
     </div>
   </div>
