@@ -21,7 +21,6 @@ const quicksortFunc = (numberOfElements, timePerOperation) => {
 const quicksortFuncInner = (array, left = 0, right = array.length - 1) => {
   if (left < right) {
     const pivotIndex = partition(array, left, right);
-    partition(array, left, array[pivotIndex]);
     quicksortFuncInner(array, left, pivotIndex - 1);
     quicksortFuncInner(array, pivotIndex + 1, right);
   }
