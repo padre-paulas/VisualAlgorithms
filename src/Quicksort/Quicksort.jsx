@@ -11,7 +11,7 @@ const Quicksort = () => {
 
   return <div className="flex justify-center h-screen w-screen bg-amber-glow/20">
     <div className="ml-0 w-screen text-midnight-violet
-    flex flex-col items-center gap-4 
+    flex flex-col items-center gap-8 
     ">
     <h1 className="flex items-center text-center justify-center text-4xl mt-4">Quicksort</h1>
     <div className={` w-[70vw] h-[70vh] rounded-xl shadow-[0_0_8px_var(--color-midnight-violet)]
@@ -32,13 +32,13 @@ const Quicksort = () => {
     bg-amber-glow w-60 text-midnight-violet 
     rounded-xl shadow-[0_0_8px_var(--color-midnight-violet)] border-2 border-midnight-violet/30 
     ">
-      <h2 className="mt-4">Info</h2>
+      <h2 className="mt-4 text-2xl">Info</h2>
       <div>
-        <p>Number of elements: {numberOfElements}</p>
+        <p>Number of elements:<br/>{numberOfElements}</p>
         <SliderNumber value={numberOfElements} onChange={setNumberOfElements} setArray={setArray} />
       </div>
       <div className="mb-40">
-        <p>Time per operation, ms: {timePerOperation}</p>
+        <p>Time per operation, ms:<br/>{timePerOperation}</p>
         <SliderTime value={timePerOperation} onChange={setTimePerOperation} />
       </div>
     </div>
