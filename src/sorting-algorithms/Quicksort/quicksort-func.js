@@ -1,23 +1,6 @@
-const ButtonStart = ({ array, barRefs, timePerOperation }) => {
-  return <button onClick={() => {
-    quicksortFunc(array, barRefs, timePerOperation);
-
-  }}
-    className="bg-muted-teal rounded-xl w-30 h-12 
-    shadow-[0_0_3px_var(--color-teal-700)] border-2 border-teal-700
-    text-xl transition-all ease-in-out 
-    hover:bg-muted-teal/90 hover:border-muted-teal
-    active:text-xs
-    ">START</button>
-}
-
 const quicksortFunc = async (array, barRefs, timePerOperation, left = 0, right = array.length - 1) => {
   if (left < right) {
-    console.log(barRefs);
     const pivotIndex = await partition(array, barRefs, timePerOperation, left, right);
-    // barRefs.current[pivotIndex].style.background = "var(--color-vibrant-coral)";
-    // await sleep(1000);
-    // barRefs.current[pivotIndex].style.background = "var(--color-amber-glow)";
     quicksortFunc(array, barRefs, timePerOperation, left, pivotIndex - 1);
     quicksortFunc(array, barRefs, timePerOperation, pivotIndex + 1, right);
   }
@@ -25,7 +8,6 @@ const quicksortFunc = async (array, barRefs, timePerOperation, left = 0, right =
 }
 
 const partition = async (array, barRefs, timePerOperation, left, right) => {
-  // const width = barRefs.current[0].offsetWidth;
   const pivot = array[right];
   let i = left - 1;
   barRefs.current[right].style.background = "var(--color-vibrant-coral)";
@@ -40,9 +22,6 @@ const partition = async (array, barRefs, timePerOperation, left, right) => {
       barRefs.current[j].style.height = `${heightI}px`;
       barRefs.current[i].style.height = `${heightJ}px`;
       [array[j], array[i]] = [array[i], array[j]];
-      // barRefs.current[i].style.transform = `translateX(${width * j}px)`;
-      // barRefs.current[j].style.transform = `translateX(${width * -i}px)`;
-      
     } 
     await sleep(timePerOperation)
   }
@@ -59,10 +38,6 @@ const partition = async (array, barRefs, timePerOperation, left, right) => {
   return i + 1;
 }
 
-// const moveBar = (barRefs, i) => {
-//   console.log(barRefs[i])
-// }
-
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-export default ButtonStart;
+export default quicksortFunc;

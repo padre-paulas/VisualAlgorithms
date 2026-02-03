@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
-import QuicksortBars from "./QuicksortBars";
-import SliderNumber from "./SliderNumber";
-import SliderTime from "./SliderTime";
-// import quicksortFunc from "./quicksort-func";
-import ButtonStart from "./ButtonStart";
-import generateArray from "./generate-array";
+import QuicksortBars from "../shared/QuicksortBars";
+import SliderNumber from "../shared/SliderNumber";
+import SliderTime from "../shared/SliderTime";
+import quicksortFunc from "./quicksort-func";
+import ButtonStart from "../shared/ButtonStart";
+import generateArray from "../shared/generate-array";
 
 const Quicksort = () => {
   const [ numberOfElements, setNumberOfElements ] = useState(50);
@@ -17,20 +17,11 @@ const Quicksort = () => {
     flex flex-col items-center gap-8 
     ">
     <h1 className="flex items-center text-center justify-center text-4xl mt-4">Quicksort</h1>
-    <div className={` w-[70vw] h-[70vh] rounded-xl shadow-[0_0_8px_var(--color-midnight-violet)]
-    ${/* inset-shadow-[0_0_8px_var(--color-midnight-violet)] */' '} `}>
+    <div className={`w-[70vw] h-[70vh] rounded-xl shadow-[0_0_8px_var(--color-midnight-violet)]`}>
       <QuicksortBars array={array} barRefs={barRefs} />
     </div>
 
-    {/* <button onClick={() => quicksortFunc(array, setArray)}
-    className="bg-muted-teal rounded-xl w-30 h-12 
-    shadow-[0_0_3px_var(--color-teal-700)] border-2 border-teal-700
-    text-xl transition-all ease-in-out 
-    hover:bg-muted-teal/90 hover:border-muted-teal
-    active:text-xs
-    ">START</button> */}
-
-    <ButtonStart array={array} barRefs={barRefs} timePerOperation={timePerOperation} />
+    <ButtonStart array={array} barRefs={barRefs} timePerOperation={timePerOperation} sortFunc={quicksortFunc}/>
       
     </div>
     <div className="grid justify-center text-center m-2

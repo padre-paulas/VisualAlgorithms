@@ -6,7 +6,6 @@ const SliderNumber = ({ value, onChange, setArray }) => {
     style={{ accentColor: 'var(--color-midnight-violet)' }}
     onChange={(e) => {
       onChange(e.target.value);
-      console.log("e.target.value = " + e.target.value + " value = " + value)
       setArray(generateArray(e.target.value));
     }}
     ></input>
