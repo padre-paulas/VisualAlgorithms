@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
-import QuicksortBars from "./QuicksortBars";
-import SliderNumber from "./SliderNumber";
-import SliderTime from "./SliderTime";
-// import quicksortFunc from "./quicksort-func";
-import ButtonStart from "./ButtonStart";
-import generateArray from "./generate-array";
+import QuicksortBars from "../shared/QuicksortBars";
+import SliderNumber from "../shared/SliderNumber";
+import SliderTime from "../shared/SliderTime";
+import quicksortFunc from "./quicksort-func";
+import ButtonStart from "../shared/ButtonStart";
+import generateArray from "../shared/generate-array";
 
 const Quicksort = () => {
   const [ numberOfElements, setNumberOfElements ] = useState(50);
@@ -30,7 +30,7 @@ const Quicksort = () => {
     active:text-xs
     ">START</button> */}
 
-    <ButtonStart array={array} barRefs={barRefs} timePerOperation={timePerOperation} />
+    <ButtonStart array={array} barRefs={barRefs} timePerOperation={timePerOperation} sortFunc={quicksortFunc}/>
       
     </div>
     <div className="grid justify-center text-center m-2
