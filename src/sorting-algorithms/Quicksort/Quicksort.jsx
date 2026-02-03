@@ -17,18 +17,9 @@ const Quicksort = () => {
     flex flex-col items-center gap-8 
     ">
     <h1 className="flex items-center text-center justify-center text-4xl mt-4">Quicksort</h1>
-    <div className={` w-[70vw] h-[70vh] rounded-xl shadow-[0_0_8px_var(--color-midnight-violet)]
-    ${/* inset-shadow-[0_0_8px_var(--color-midnight-violet)] */' '} `}>
+    <div className={`w-[70vw] h-[70vh] rounded-xl shadow-[0_0_8px_var(--color-midnight-violet)]`}>
       <QuicksortBars array={array} barRefs={barRefs} />
     </div>
-
-    {/* <button onClick={() => quicksortFunc(array, setArray)}
-    className="bg-muted-teal rounded-xl w-30 h-12 
-    shadow-[0_0_3px_var(--color-teal-700)] border-2 border-teal-700
-    text-xl transition-all ease-in-out 
-    hover:bg-muted-teal/90 hover:border-muted-teal
-    active:text-xs
-    ">START</button> */}
 
     <ButtonStart array={array} barRefs={barRefs} timePerOperation={timePerOperation} sortFunc={quicksortFunc}/>
       
