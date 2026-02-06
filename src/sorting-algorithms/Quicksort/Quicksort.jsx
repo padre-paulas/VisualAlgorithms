@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import QuicksortBars from "../shared/QuicksortBars";
+import ArrayBars from "../shared/ArrayBars";
 import SliderNumber from "../shared/SliderNumber";
 import SliderTime from "../shared/SliderTime";
 import quicksortFunc from "./quicksort-func";
@@ -18,7 +18,7 @@ const Quicksort = () => {
     ">
     <h1 className="flex items-center text-center justify-center text-4xl mt-4">Quicksort</h1>
     <div className={`w-[70vw] h-[70vh] rounded-xl shadow-[0_0_8px_var(--color-midnight-violet)]`}>
-      <QuicksortBars array={array} barRefs={barRefs} />
+      <ArrayBars array={array} barRefs={barRefs} />
     </div>
 
     <ButtonStart array={array} barRefs={barRefs} timePerOperation={timePerOperation} sortFunc={quicksortFunc}/>
@@ -31,7 +31,7 @@ const Quicksort = () => {
       <h2 className="mt-4 text-2xl">Info</h2>
       <div>
         <p>Number of elements:<br/>{numberOfElements}</p>
-        <SliderNumber value={numberOfElements} onChange={setNumberOfElements} setArray={setArray} />
+        <SliderNumber value={numberOfElements} onChange={setNumberOfElements} setArray={setArray} barRefs={barRefs}/>
       </div>
       <div className="mb-40">
         <p>Time per operation, ms:<br/>{timePerOperation}</p>
