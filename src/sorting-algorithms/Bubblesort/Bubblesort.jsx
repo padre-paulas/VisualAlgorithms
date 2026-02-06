@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
 import ArrayBars from "../shared/ArrayBars";
-import SliderNumber from "../shared/SliderNumber";
-import SliderTime from "../shared/SliderTime";
+import SliderNumber from "../../shared-global/SliderNumber";
+import SliderTime from "../../shared-global/SliderTime";
 import ButtonStart from "../shared/ButtonStart";
-import generateArray from "../shared/generate-array";
+import generateArray from "../../shared-global/generate-array";
 import bubblesortFunc from "./bubblesort-func";
 
 const Bubblesort = () => {

@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
 import ArrayBars from "../shared/ArrayBars";
-import SliderNumber from "../shared/SliderNumber";
-import SliderTime from "../shared/SliderTime";
+import SliderNumber from "../../shared-global/SliderNumber";
+import SliderTime from "../../shared-global/SliderTime";
 import quicksortFunc from "./quicksort-func";
 import ButtonStart from "../shared/ButtonStart";
-import generateArray from "../shared/generate-array";
+import generateArray from "../../shared-global/generate-array";
 
 const Quicksort = () => {
   const [ numberOfElements, setNumberOfElements ] = useState(50);
