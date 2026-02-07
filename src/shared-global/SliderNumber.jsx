@@ -1,3 +1,4 @@
+import setColor from "./set-array-bars-color";
 const SliderNumber = ({ value, onChange, setArray, barRefs, generateArrayFunc }) => {
   return <input className="h-1 w-35 bg-transparent" 
     min="1" max="100" value={value} type="range"
@@ -7,15 +8,9 @@ const SliderNumber = ({ value, onChange, setArray, barRefs, generateArrayFunc })
       setArray(generateArrayFunc(e.target.value));
     }}
     onMouseDown={(e) => {
-      setColor(barRefs, e.target.value);
+      setColor(barRefs, e.target.value, 'var(--color-amber-glow)');
     }}
     ></input>
-}
-
-const setColor = (barRefs, value) =>  {
-  for (let i = 0; i < value; i++) {
-    barRefs.current[i].style.background = 'var(--color-amber-glow)';
-  }
 }
 
 export default SliderNumber;
