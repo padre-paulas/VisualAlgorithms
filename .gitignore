@@ -23,6 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 .env*
+NOTES_internal.txt
 
 # Playwright
 /test-results/
